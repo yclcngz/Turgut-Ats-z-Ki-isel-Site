@@ -12,6 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'ease-out-cubic', // default easing for AOS animations
     });
 
+    // Hero Video Sound Toggle
+    const video = document.getElementById('heroBgVideo');
+    const soundBtn = document.getElementById('heroSoundBtn');
+    const soundIcon = document.getElementById('heroSoundIcon');
+
+    if (video && soundBtn) {
+        soundBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            soundIcon.className = video.muted
+                ? 'fa-solid fa-volume-xmark'
+                : 'fa-solid fa-volume-high';
+        });
+    }
+
 
     // 2. Loading Screen Hide
     const loader = document.querySelector('.loader-wrapper');
